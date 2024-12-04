@@ -1,0 +1,366 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>Ninja Forms - Confirmation & Reminder</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		., body, p { font-family: Verdana, Geneva, sans-serif;  }
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+		a { color: #9C0; }
+		ul > li { margin: 10px 0px; border-bottom: 1px dotted #9C0; padding: 5px; background-color: #eee;}
+		hr { color: #9C0; background-color:#9C0; height: 5px; }
+		
+		h3 { border-bottom: 1px dotted #ccc; padding-bottom:5px; }
+		
+		.top { float: right; margin-right: 30px; background-color: #9C0; color: #fff; padding: 5px 15px; margin-top: -5px; text-decoration:none; }
+		
+	.top1 {float: right; margin-right: 30px; background-color: #9C0; color: #fff; padding: 5px 15px; margin-top: -5px; text-decoration:none; }
+	body { background-color: #666; margin: 0; padding: 0; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAATklEQVQoU2NkYGAwZmBgOMuAACA+CKCIMSIpADGRNaEYgKwQ3WQUjTCF6CYhWw2WAynEpgjmIpg7jUlSiM0TWK2GWUOUZ7ApxggeogIcABHJFtftKVfJAAAAAElFTkSuQmCC) repeat; }
+	.container { background-color: #fff; padding: 25px; box-shadow: 0px 15px 15px #888; }
+
+	
+	
+    </style>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h3 class="center alt">&ldquo;Ninja Forms addon - Confirmation &amp; Reminder Documentation by &ldquo;Treehugger&rdquo; v1.2</h3>
+		
+		<hr>
+		
+		<h1 class="center">&ldquo;Ninja Forms - Confirmation &amp; Reminder&rdquo;</h1>
+		
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: 09/03/2017<br>
+					Updated: 
+					01/07/2018<br>
+					By: Alex Romijn<br>
+					Email: <a href="plugins.service@treehugger.nl">plugins.service@treehugger.nl</a>
+					</strong>
+				</p>
+			</div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for purchasing my plugin. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="https://codecanyon.net/user/treehugger" target="_blank">here</a>. Thanks so much!</p>
+			</div>
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#">Intro</a></li>
+			<li><a href="#installation">Installation</a>		    </li>
+			<ul>
+			  <li><strong>Install the plugin via Wordpress</strong></li>
+			  <li><strong>Install the plugin with FTP</strong></li>
+	      </ul>
+			<li><a href="#setupform">Setup a  form</a></li>
+			<ul>
+			  <li><strong>Create a form</strong></li>
+		  </ul>
+	      <li><a href="#setup"> Setup confirmationmail</a>          </li>
+	      <ul>
+	        <li><strong>Add the action</strong></li>
+	        <li><strong>Configure the action</strong>
+	          <ul>
+	            <li>Configure  settings</li>
+	            <li>Configure redirect settings</li>
+	            <li>Configure reminder settings</li>
+	            <li>Configure confirmation settings</li>
+	            <li>Configure notification settings</li>
+	            <li> Configure advanced settings</li>
+              </ul>
+	        </li>
+	      </ul>
+	      <li><a href="#publish">Publish your form on a page</a></li>
+	      <li><a href="#submissions">Submissions &amp; confirmations</a></li>
+	      <li><a href="#hook">Add functionality with hook</a></li>
+	      <li><a href="#faq">Troubleshooting / FAQ</a></li>
+	      <li><a href="#support">Support</a></li>
+	      <li><a href="#changelog">Changelog</a></li>
+		</ol>
+		
+		<hr>
+		
+		<h3 id="intro"><strong>A) Intro</strong><a href="#toc" class="top">top</a></h3>
+		<p><strong>What is Ninja Forms - Confirmation &amp; Reminder</strong></p>
+	  <p>The addon Confirmation &amp; Reminder for Ninja Forms is a great plugin to provide some extra functionality in Ninja Forms. The addon creates a new action to send a confirmation mail after submitting a form. In this confirmation mail the user will be provided an unique link. After clicking this link the user will be confirmed. By showing a new column in the submission view you can see which user of the form has confirmed their submission. You can use this for example for forms in which people can sign up for events. Ofcourse it can happen that someone forget to confirm, therefore I provided a reminder function. This mail will be send after a specific amount of days (you can change that). You can customize this mail as well.
+	    You can also hook in the confirmation with your own function. 
+	  </p>
+	  <p>You can check de demo form here: <a href="https://demo.treehugger.nl/?page_id=25" target="_blank">https://demo.treehugger.nl/</a> </p>
+	  <p><strong>Features</strong></p>
+		<ul>
+		  <li>Easy integration with Ninja Forms</li>
+		  <li>Setup and customize a new action to send a confirmation mail</li>
+		  <li>Configure how many days to wait till reminder is send</li>
+		  <li>Customize the reminder mail</li>
+		  <li>Redirect to different pages for succes with confirmation, already confirmed or errors. </li>
+		  <li>Hook into the confirmation with your own function if you want to expand the functionality</li>
+		  <li>Overview of confirmation / reminder status in the submission view. </li>
+		  <li>Override the reminder by sending reminder immediately </li>
+		  <li>Sending a custom notification when someone confirmed</li>
+      </ul>
+		<p><strong>Requirements</strong></p>
+		<ul>
+		  <li><strong>Wordpress 4.4+</strong></li>
+		  <li><strong>Ninja Forms 3.1 +</strong> </li>
+		  <li>(use of the Store Submission action is needed to make this addon work, this is active by default when creating a new form)</li>
+      </ul> 
+
+		<hr>
+
+		<h3 id="installation"><strong>B) Installation</strong><a href="#toc" class="top">top</a></h3>
+
+		<p>There are two ways to install the plugin. </p>
+		<p><strong>Install the plugin via Wordpress</strong></p>
+Follow the following steps:
+		<ul>
+		  <li><strong>Step 1: </strong>Login to your <strong>Wordpress Admin Panel</strong> and go to <strong>Plugins &gt; Add New &gt; Upload Plugi</strong>n</li>
+		  <li><strong>Step 2: </strong>Find the <strong>nf-confirm-and-remind.zip </strong>file on your computer and click <strong>Install Now</strong></li>
+		  <li><strong>Step 3: </strong>Click <strong>Activate</strong> to activate this plugin.</li>
+	  </ul>
+		<p><strong>Install the plugin with FTP</strong></p>
+		<p>Follow the following steps: </p>
+		<ul>
+		  <li><strong>Step 1: </strong>Login to your hosting space via an FTP client (for example: FileZilla, Total Commander)</li>
+		  <li><strong>Step 2: </strong>Unzip the <strong>nf-confirm-and-remind.zip </strong>file to your "wp-content/plugins" folder.</li>
+		  <li><strong>Step 3: </strong>Login to your <strong>Wordpress Admin Panel</strong> and go to <strong>Plugins </strong></li>
+		  <li><strong>Step 4: </strong>Activate the newly installed plugin by going to<strong> Plugins &gt; Installed Plugins</strong> and clicking the<strong> Activate</strong> button.</li>
+      </ul>
+		<p>Now you're good to go to the next step. </p>
+		<hr>
+		
+		<h3 id="setupform"><strong>C) Setup a form</strong><a href="#toc" class="top1">top</a></h3>
+        <p>Let's setup a form in Ninja Forms so we can add our action to it.</p>
+        <p><strong>Create a form</strong></p>
+        <ul>
+          <li><strong>Step 1: </strong>Login to your <strong>Wordpress Admin Panel</strong> and go to <strong>Ninja Forms</strong> &gt; <strong>Add new</strong></li>
+          <li><strong>Step 2: </strong>Click on 'Add new'<br>
+          <img src="assets/images/scraddnew.jpg" width="600"></li>
+          <li><strong>Step 3: </strong>Select 'Blank Form' to start from scratch<br>
+          <img src="assets/images/scraddnew2.jpg" width="600" height="461">          </li>
+          <li><strong>Step 4: </strong>Place the fields you want in the form. You can find more <a href="https://ninjaforms.com/docs/form-building/" target="_blank">here</a> about building a form in the documentation of Ninja Forms. <br>
+            <img src="assets/images/formexample.png" width="600"><br>
+          </li>
+          <li><strong>Stel 5: </strong>Click on <strong>Done</strong> and after that on <strong>Publish</strong>. </li>
+        </ul>
+        <p><strong>Now let's add our action to it, so people who fill in the form get an mail with confirmationlink.</strong></p>
+        <hr>
+        <h3 id="setup"><strong>D) Setup confirmationmail</strong><a href="#toc" class="top1">Top</a></h3>
+      <p>Follow the next instruction to add a confirmation mail and reminder to your newly created form</p>
+      <p><strong>Add the action</strong></p>
+      <ul>
+        <li><strong>Step 1: </strong>Click on the tab 'Emails &amp; Actions'<br>
+        <img src="assets/images/formactions.png" width="700" height="381">        </li>
+        <li><strong>Step 2: </strong>You now see a list of 'actions', like 'succes message', 'email' and 'Store Submission'. These three are default when creating a form. The 'Store Submission' is an action which saves submitted data to the database. This action is mandatory for this plugin to work. If this action is somehow missing. Click on the <strong>Add </strong>button in the right bottom corner of the screen. <br>
+        <img src="assets/images/addbtn.png" width="122" height="95">        <br>
+        And then add the 'Store Submission' action by clicking on the button. It will be added to the action list. <br>
+        <img src="assets/images/storesubmission.png" width="600" height="246">        <br>
+        </li>
+        <li><strong>Step 3: </strong>Now let's add the 'Confirmation &amp; Reminder' action. Click on the <strong>Add </strong>button in the right bottom corner of the screen and select 'Confirmation &amp; Reminder'. <br>
+        <img src="assets/images/storesubmission2.png" width="600"></li>
+        <li><strong>Step 4: </strong>After adding, a side window shows where you can adjust the setting of the action. If you don't see it, then just click on the config icon <img src="assets/images/configicon.png" width="30"> on the side of the action. <img src="assets/images/v1.2/scrmain.jpg"></li>
+      </ul>
+      <p><strong>Configure the action </strong></p>
+      <ul>
+        <li><strong>Step 1: </strong>First we have to let the addon know where to send the confirmation mail to. So fill in the <strong>To </strong>field. You can use merge tags to let the system know which field it has to connect to. Click on the icon in the fieldbox. <br>
+        <img src="assets/images/tofield.png" width="179" height="46">        <br>
+        And then select the correct field:<br>
+        <img src="assets/images/fieldemail.png" width="450" height="300">        </li>
+        <li><strong>Step 3: </strong>Now fill in the subject you want</li>
+        <li><strong>Step 4: </strong>In the field Email Message, you can write the e-mail the person will get after submitting the form. You can type anything you want. The only thing important here is, that you insert a small piece of code, so the system will replace that with an unique link. This code is {link}. Easy isn't it? You can place it wherever you want. If you send HTML mail, then you can use it also in the code.  Like: <em>&lt;a href=&quot;{link}&quot;&gt;{link}&lt;/a&gt; or &lt;a href=&quot;{link}&quot;&gt;click here&lt;/a&gt;</em><br>
+        <strong><img src="assets/images/fieldconfirmmail.png" width="700" height="269"></strong></li>
+      </ul>
+      <blockquote>The following sections are setup like the structure available in the action settings. We arranged this in a more visual way for easy configuration:<br>
+      <img src="assets/images/v1.2/structure.jpg" width="300" height="117"></blockquote>
+      <p><strong>Configure redirect settings</strong></p>
+      <ul>
+        <li><strong>Step 1: </strong>The next step what we need to do is to build three new pages. These pages will be used to send the user to when a confirmation is done succesfully or generated an error. We need three pages: 1) a page to show after a confirmation is done succesfully 2) a page to redirect to if the user is already confirmed 3) a page when an unknow error has occured. You can find more on creating pages in the <a href="https://codex.wordpress.org/Pages" target="_blank">Wordpress documentation</a>.<br>
+          <br>
+          Now after creating the pages go to the 'Redirect settings' section:
+          <br>
+        <img src="assets/images/v1.2/sectionredirect.jpg" width="300" height="117"></li>
+        <li><strong>Step 2: </strong>After you've created the pages, you can fill in the URL of the pages in the correct fields (like: http://yourpage.com/mypage).           <br>
+          <img src="assets/images/fieldspages.png" width="700" height="265"><br>
+        </li>
+      </ul>
+      <p><strong>Configure reminder settings</strong></p>
+      <ul>
+        <li><strong>Step 1: </strong>The next part is setting the reminder correctly. Go to the reminder settings section:<br>
+        <img src="assets/images/v1.2/sectionreminder.jpg" width="300" height="117">        </li>
+        <li><strong>Step 2: </strong>Now first, we set the time between sending the form and when the reminder should be triggered. You see a field like the one below, marked by the red arrow. You can set the number of days. Starting from one day after a form has been submitted.<img src="assets/images/v1.2/scrremindersection.jpg" width="700" height="506"></li>
+        <li><strong>Step 3: </strong>In the previous part you already has setup when the reminder has to be send. Now configure the email which will be send. You can do that by setting the subject field and message field. <br>
+        <img src="assets/images/v1.2/scrremindersection2.jpg" width="700" height="391">        </li>
+        <li><strong>Step 2: </strong> Use {link} to place the correct confirmation link in the message. </li>
+      </ul>
+      <p>Note that the reminder is run through a cron job and will check every hour if it has to send reminders. The limit per cycle is adjustable, but default is <strong>100</strong>. You can adjust this in the Ninja Forms &gt; settings: </p>
+      <p><img src="assets/images/v1.3/scrlimitcycle.jpg" width="600" height="110"></p>
+      <p>The limit can ben depending on the server you use and the maximum emails you can send. Some hosting providers have restrictions. </p>
+      <p><strong>Configure after confirmation settings</strong></p>
+      <ul>
+        <li><strong>Step 1: </strong>The next part is setting the after confirmation settings correctly. Go to the after confirmation settings section:<br>
+          <img src="assets/images/v1.3/scrconfirmation.jpg" width="333" height="129">          <br>
+        </li>
+        <li><strong>Step 2: </strong>You see two options:<br>
+        <img src="assets/images/v1.3/scrafterconf.jpg">        <br>
+        If you enable the first one 'enable delete after confirmation'. The submission will be deleted after the user will confirm the entry. </li>
+        <li><strong>Step 3: </strong>If you enable the second, you will find additional configuration. <br>
+          <img src="assets/images/v1.3/scrdeleteafterdays.jpg" width="600" height="211">          <br>
+          Now you can adjust the time it will take to delete the entries which aren't confirmed. For example. If someone submit the 
+          form and doesn't confirm. The plugin will check the submission for entries who have to be deleted after 5 days (or other amount of days used) if not confirmed. This way the data in the database isn't longer stored then necessary and you can comply with laws on privacy. <br>
+        </li>
+      </ul>
+      <p><strong>Configure notification settings</strong></p>
+      <ul>
+        <li><strong>Step 1:<br>
+        </strong>Now lets configure the notification part. When a user confirms you can send a confirmation directly to for example an administrator. Click on the 'notification settings' section to expand those settings.<br>
+        <img src="assets/images/v1.2/sectionnotification.jpg" width="300" height="117"></li>
+        <li><strong>Step 2: </strong><br>
+          Toggle 'enable notification' to show more settings.<br>
+        <img src="assets/images/v1.2/notifactiondisabled.jpg" width="500" height="70"></li>
+        <li><strong>Step 3: <br>
+          </strong>Now change the settings like you want it. First fill in 'send notification to'. Use an email address where you want to send the notifcation to. In the subject field set a subject. For example 'notification'. <strong><br>
+        </strong><img src="assets/images/v1.2/scrnotification.jpg" width="700"> </li>
+        <li><strong>Step 4: <br>
+        </strong>Now we going to setup the notification mail. You can fill in the text of the email and in which format it has to be send (html or plain text).<br>
+        <img src="assets/images/v1.2/scrnotification2.jpg" width="700"><br>
+        You can use only text, but you can also insert a tag to replace it with the email address of the person who confirmed with a direct link to the admin and edit screen of the specific submission. You can use {user:confirmed} or select it with the merge tag dialog by clicking the button <img src="assets/images/v1.2/mergebutton.jpg" width="32" height="32"> <br>
+        <img src="assets/images/v1.2/scrnotification3.jpg" width="700" height="485">        <br>
+        </li>
+      </ul>
+      <p><strong>Configure advanced settings</strong></p>
+      <ul>
+        <li><strong>Step 1: </strong>Click on 'Advanced settings' to toggle the advanced settings<br>
+        <img src="assets/images/v1.2/sectionadvanced.jpg" width="300" height="117"></li>
+        <li><strong>Step 2: </strong>Change the fields in this setting with the settings you want. You can adjust the From name, From address, the format in which the mail is send (default HTML) or use the CC and BCC fields, to send a copy. Please note that some hosters override  senders (see Ninja Forms <a href="https://ninjaforms.com/docs/troubleshooting-email-problems/" target="_blank">troubleshooting</a> section for more information). <img src="assets/images/fieldsadvanced.png" width="700" height="355"></li>
+      </ul>
+        <hr>
+        <h3 id="publish"><strong>E) Publish your form on a page</strong><a href="#toc" class="top1">top</a></h3>
+        <p>Now it's time to publish your form on a page. Follow the steps below.</p>
+        <ul>
+          <li><strong>Step 1: </strong>Login to your <strong>Wordpress Admin Panel</strong> and go to <strong>Pages</strong> &gt; <strong>Add new</strong></li>
+          <li><strong>Step 2: </strong>Click on the <strong>Add Form</strong> button<br>
+          <img src="assets/images/createpage.jpg" width="600" height="285">          </li>
+          <li><strong>Step 3: </strong>Select your form and click on <strong>Insert<br>
+          <img src="assets/images/createpage2.jpg">          </strong></li>
+          <li><strong>Step 4: </strong>Click on <strong>Publish</strong>. Good job! Your page with the form is ready. Click on <strong>View Page </strong>to go directly to your page and let's try it out.</li></ul>
+        <p>Fill in some details and your email and send. Now check your inbox for the confirmationmail with link. </p>
+        <p align="center"><img src="assets/images/ngconfirm.jpg" width="590" height="300"></p>
+        <hr>
+      <h3 id="hook2"><strong>F) Submissions &amp; confirmations</strong><a href="#toc" class="top1">top</a></h3>
+        <p>When a user has confirmed, these details will be saved. The administrator can check the submissions to see which user has been confirmed and which one not. The table will show which user is confirmed, and how long it takes before sending a reminder. You can find the submissions by login in the admin panel and go to <strong>Ninja Forms &gt; Submissions. </strong>After that, select the form from which you want to show the details. </p>
+        <p><img src="assets/images/submissions.jpg" width="700" height="166"></p>
+        <p>If you don't want to wait x days till the reminder is send to a specific user, then there is also an overide possibility. <br>
+        <img src="assets/images/btnoveridereminder.jpg" width="150" height="100"></p>
+        <p>Click on the mail icon in the Reminder column. This will send the reminder. </p>
+        <p>Note: If you don't see any columns in the table go to '<strong>Screen Options'</strong> in the right top corned of the screen. <br>
+        <img src="assets/images/screenoptions.jpg" width="200" height="38"><br>
+        After that check the columns 'Confirmed' and 'Reminder'. Press Apply after that to show these columns. <br>
+        <img src="assets/images/screenoptions2.jpg" width="500" height="127"> </p>
+        <hr>
+        <h3 id="hook"><strong>G) Add functionality with hook</strong><a href="#toc" class="top1">top</a></h3>
+        <p>We provide a hook into the confirmation process, so you can add extra functionality. For example, when someone confirms, you can let a function run to send an extra e-mail or use custom API's to send the data to another platform.</p>
+        <blockquote>
+          <p>do_action('nf_confirmmail_confirmed_after_success', $formid, $actionsettings, $sub);</p>
+        </blockquote>
+        <p>For example, you can use the following code to add an action to this action hook:</p>
+        <blockquote>
+          <p>// set the nf_confirmmail_confirmed_after_success callback <br>
+            <strong>function action_nf_confirmmail_confirmed_after_success</strong>($formid, $actionsettings, $sub  ) { <br>
+            // do what you want here... <br>
+            }<br>
+            <br>
+            // add the action <br>
+            <strong>add_action</strong>('nf_confirmmail_confirmed_after_success',<strong>'action_nf_confirmmail_confirmed_after_success'</strong>, 10, 3 );</p>
+        </blockquote>
+        <p>And remove the action with:</p>
+        <blockquote>
+          <p>// remove the action <br>
+            <strong>remove_action</strong>( 'nf_confirmmail_confirmed_after_success', <strong>'action_nf_confirmmail_confirmed_after_success'</strong>, 10, 3 ); </p>
+        </blockquote>
+        <p>The hook has three variables to use. </p>
+        <ul>
+          <li>$formid: <em>The formid from the form which was send</em></li>
+          <li><em>$actionsettings: All the configuration details from the form which was send</em></li>
+          <li><em>$sub: this contains the submission object, see this <a href="http://developer.ninjaforms.com/codex/submissions/" target="_blank">link</a> for more information.</em></li>
+        </ul>
+        <p>Additionally, you can also use a hook to target one specific form by adding the ID of the form: 'nf_confirmmail_confirmed_after_success_{formid}.<br>
+For example with a form with ID 5:</p>
+        <blockquote>
+          <p>// set the nf_confirmmail_confirmed_after_success_5 callback <br>
+            function <strong>action_nf_confirmmail_confirmed_after_success</strong>($formid, $actionsettings, $sub  ) { <br>
+          // do what you want here... <br>
+          }<br>
+  <br>
+          // add the action <br>
+          <strong>add_action</strong>('nf_confirmmail_confirmed_after_success_5',<strong>'action_nf_confirmmail_confirmed_after_success'</strong>, 10, 3 );        </p>
+        </blockquote>
+        <p>You can use the same variables as 'nf_confirmmail_confirmed_after_success'. </p>
+        <p>Another hook you can use is the <em>nf_confirmmail_delete_after_confirmed</em> hook. </p>
+        <blockquote>
+          <p>do_action('nf_confirmmail_delete_after_confirmed',$formid);</p>
+      </blockquote>
+        <p>For example, you can use the following code to add an action to this action hook:</p>
+        <blockquote>
+          <p>// set the nf_confirmmail_delete_after_confirmed callback <br>
+            <strong>function action_nf_confirmmail_delete_after_confirmed</strong>($formid  ) { <br>
+            // do what you want here... <br>
+            }<br>
+            <br>
+            // add the action <br>
+            <strong>add_action</strong>('nf_confirmmail_delete_after_confirmed',<strong>'action_nf_confirmmail_delete_after_confirmed'</strong>, 10, 1 );</p>
+        </blockquote>
+        <p>You can use this to add extra functionallity when someone confirmed and the entry was deleted. Like, for example sending a notification mail to an administrator. Or use it to call some external API. </p>
+        <hr>
+        <h3 id="faq"><strong>H) Troubleshooting</strong> <strong>/ Questions</strong><a href="#toc" class="top1">top</a></h3>
+        <ul>
+          <li><strong>It is not working<br>
+          </strong><em>Check if you have the action 'Store Submission' added to your form. The addon needs this one to work. If it still not work, check if you filled in the advanced settings correctly. </em></li>
+          <li><strong>The plugin gives an error when activating<br>
+          </strong><em>At the moment we don't have any known incompatibilities with other plugins. Ofcourse it can happen. Please contact us when experiencing problems. Also try to disable other plugins to be sure if it is a conflict between plugins. </em></li>
+          <li><strong>Emails are sending from an other address then the settings<br>
+          </strong><em>Unfortunately this can happen due to settings of your server or host. Settings by the host or server can replace the sending address as a way to stop spam. Please contact your host or adjust your server settings. </em>
+          </li>
+          <li><strong>I have some feature requests or want to give some feedback</strong><em><strong><br>
+          </strong></em>We love to hear feedback or feature requests for future versions of this plugin<em> . </em> </li>
+      </ul>
+        <hr>
+        <h3 id="faq">&nbsp;</h3>
+        <h3 id="support"><strong>I) Support</strong><a href="#toc" class="top1">top</a></h3>
+        <p>Thank you so much for purchasing this plugin. I'd be glad to help you if you have any questions relating to this plugin. Please contact me at plugins.service@treehugger.nl (language: dutch or english)</p>
+        <hr>
+      <h3 id="support2"><strong>J) Changelog</strong><a href="#toc" class="top1">top</a></h3>
+      <p>### 07/22/2018 ### v 1.3<br>
+        bugfix: cron job fix to check for reminders, limit per cycle is adjustable<br>
+        bugfix: fieldvalues mergetags were not shown in reminder mail. New function implemented to replace those tags<br>
+        new: delete on confirmation &amp; delete after .. days<br>
+        new: two merge tags for better implementation for creating confirmed url<br>
+      new: hook added to do something after deletion entry on confirmation: nf_confirmmail_delete_after_confirmed</p>
+      <p>### 12/27/2017 ### v 1.2<br>
+        bugfix: fix for incorrect form data<br>
+        new: grouped action settings for better visual representation<br>
+        new: add notification on confirmation: when someone confirms a submission, you can notify for example a contact person<br>
+        documentation: updated the documentation according to the changes made </p>
+      <p>### 10/01/2017 ### v 1.1<br>
+        new: action hook added specific for one form: nf_confirmmail_confirmed_after_success_$formid</p>
+      <hr>
+      <p><strong><img src="assets/images/logoliggend.png" width="478" height="188"style="vertical-align: middle; float: right;"></strong></p>
+        <p><strong>Alex Romijn - Treehugger</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>

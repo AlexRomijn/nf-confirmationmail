@@ -1,0 +1,18 @@
+Ninja Forms - Confirm & Reminder
+-----------------------------------
+
+### 07/22/2018 ### v 1.3
+bugfix: cron job fix to check for reminders, limit per cycle is adjustable
+bugfix: fieldvalues mergetags were not shown in reminder mail. New function implemented to replace those tags
+new: delete on confirmation & delete after .. days
+new: two merge tags for better implementation for creating confirmed url
+new: hook added to do something after deletion entry on confirmation: nf_confirmmail_delete_after_confirmed
+
+### 12/27/2017 ### v 1.2
+bugfix: fix for incorrect form data
+new: grouped action settings for better visual representation
+new: add notification on confirmation: when someone confirms a submission, you can notify for example a contact person
+documentation: updated the documentation according to the changes made 
+
+### 10/01/2017 ### v 1.1
+new: action hook added specific for one form: nf_confirmmail_confirmed_after_success_$formid
